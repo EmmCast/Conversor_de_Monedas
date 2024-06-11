@@ -1,0 +1,7 @@
+CREATE TABLE Divisas (
+	id_divisa INTEGER AUTO_INCREMENT PRIMARY KEY,
+    codigo VARCHAR(3) NOT NULL,
+    pais VARCHAR(50) NOT NULL,
+    moneda VARCHAR(50) NOT NULL,
+    valor DOUBLE NOT NULL
+);
