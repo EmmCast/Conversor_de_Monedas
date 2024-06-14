@@ -1,7 +1,6 @@
-CREATE TABLE Divisas (
-	id_divisa INTEGER AUTO_INCREMENT PRIMARY KEY,
-    codigo VARCHAR(3) NOT NULL,
-    pais VARCHAR(50) NOT NULL,
-    moneda VARCHAR(50) NOT NULL,
-    valor DOUBLE NOT NULL
+CREATE TABLE cuentas (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    nombre_cliente VARCHAR(255) NOT NULL,
+    tipo_cuenta VARCHAR(255) NOT NULL,
+    saldo_disponible DOUBLE NOT NULL
 );

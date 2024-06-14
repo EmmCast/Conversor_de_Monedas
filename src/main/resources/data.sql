@@ -1,8 +1,12 @@
-INSERT INTO Divisas (codigo, pais, moneda, valor) VALUES ('USD', 'Estados Unidos ', 'Dolar Estaudinidense', 18.22);
-INSERT INTO Divisas (codigo, pais, moneda, valor) VALUES ('EUR', 'Europa' , 'Euro', 19.62);
-INSERT INTO Divisas (codigo, pais, moneda, valor) VALUES ('JPY', 'Japon ', 'Yen', 0.12);
-INSERT INTO Divisas (codigo, pais, moneda, valor) VALUES ('GBP', 'Reino Unido', 'Libra Esterlina', 23.19);
-INSERT INTO Divisas (codigo, pais, moneda, valor) VALUES ('AUD', 'Australia', 'Dolar Australiano', 12.044578);
-INSERT INTO Divisas (codigo, pais, moneda, valor) VALUES ('CAD', 'Canada', 'Dolar Canadience', 13.2390);
-INSERT INTO Divisas (codigo, pais, moneda, valor) VALUES ('CHF', 'Suiza', 'Franco suizoc', 20.319);
-INSERT INTO Divisas (codigo, pais, moneda, valor) VALUES ('CNY', 'China', 'Yuan', 2.54003);
+
+INSERT INTO cuentas (nombre_cliente, tipo_cuenta, saldo_disponible) VALUES
+('Tony Stark', 'Corriente', 1599.99),
+('Bruce Wayne', 'Ahorro', 2000.50),
+('Clark Kent', 'Corriente', 3050.75),
+('Diana Prince', 'Ahorro', 4550.30),
+('Peter Parker', 'Corriente', 950.25),
+('Natasha Romanoff', 'Corriente', 1235.65),
+('Steve Rogers', 'Ahorro', 750.00),
+('Wanda Maximoff', 'Corriente', 1789.80),
+('Stephen Strange', 'Ahorro', 3000.40),
+('Ts Challa', 'Corriente', 9999.99);

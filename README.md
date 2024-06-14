@@ -1,43 +1,88 @@
 # Conversor de Monedas
 
-Este proyecto es un servicio RESTful para la conversión de divisas. Permite convertir un monto de una divisa a otra basada en tasas de cambio almacenadas en una base de datos.
+Un breve proyecto en el cual se visualizan cuentas de usuarios de un banco DC y MARVEL y en sus funciones esta 
+buscar clientes
+consultar saldo
+hacer retiros 
+hacer depositos 
+y salir
 
-## Tecnologías Utilizadas
+##Requerimientos
 
-- Java
-- Spring Boot
-- Spring Data JPA
-- H2 Database (o cualquier base de datos soportada por JPA)
-- Maven
+Java 17
+Base de datos PostgresSQL
 
-## Estructura del Proyecto
+## COnfiguraciones
 
-- `Entity` : Define la entidad `Divisa`.
-- `DTO` : Contiene los objetos de transferencia de datos `Request` y `Response`.
-- `Repository` : Interfaz para el acceso a datos `IDivisaRepository`.
-- `Service` : Interfaz y su implementación `IDivisaService` y `DivisaServiceImpl`.
-- `Controller` : Controlador REST `DivisaController`.
+Clonar el repositorio desde GitHub: git clone https://github.com/tu-usuario/tu-repositorio.git
+Importar el proyecto en tu IDE (IntelliJ IDEA, Eclipse, etc.).
+Configurar la base de datos.
 
-## Configuración
+## Instrucciones
 
-### Base de Datos
+Desde tu IDE: cómo ejecutar la clase principal (ConversorDeMonedasApplication).
+Inserta el scrip de base de datos
 
-Este servicio utiliza una base de datos H2 en memoria para almacenar las tasas de cambio de las divisas. A continuación, se presenta el script SQL para crear la tabla y poblarla con datos iniciales:
-
-```sql
-CREATE TABLE Divisas (
-    id_divisa SERIAL PRIMARY KEY NOT NULL,
-    codigo VARCHAR(3) NOT NULL,
-    pais VARCHAR(50) NOT NULL,
-    moneda VARCHAR(50) NOT NULL,
-    valor DOUBLE NOT NULL
+CREATE TABLE cuentas (
+    id SERIAL PRIMARY KEY,
+    nombre_cliente VARCHAR(255) NOT NULL,
+    tipo_cuenta VARCHAR(255) NOT NULL,
+    saldo_disponible NUMERIC(15, 2) NOT NULL
 );
 
-INSERT INTO Divisas (codigo, pais, moneda, valor) VALUES ('USD', 'Estados Unidos', 'Dólar Estadounidense', 18.22);
-INSERT INTO Divisas (codigo, pais, moneda, valor) VALUES ('EUR', 'Europa', 'Euro', 19.62);
-INSERT INTO Divisas (codigo, pais, moneda, valor) VALUES ('JPY', 'Japón', 'Yen', 0.12);
-INSERT INTO Divisas (codigo, pais, moneda, valor) VALUES ('GBP', 'Reino Unido', 'Libra Esterlina', 23.19);
-INSERT INTO Divisas (codigo, pais, moneda, valor) VALUES ('AUD', 'Australia', 'Dólar Australiano', 12.044578);
-INSERT INTO Divisas (codigo, pais, moneda, valor) VALUES ('CAD', 'Canadá', 'Dólar Canadiense', 13.2390);
-INSERT INTO Divisas (codigo, pais, moneda, valor) VALUES ('CHF', 'Suiza', 'Franco Suizo', 20.319);
-INSERT INTO Divisas (codigo, pais, moneda, valor) VALUES ('CNY', 'China', 'Yuan', 2.54003);
+
+INSERT INTO cuentas (nombre_cliente, tipo_cuenta, saldo_disponible) VALUES
+('Tony Stark', 'Corriente', 1599.99),
+('Bruce Wayne', 'Ahorro', 2000.50),
+('Clark Kent', 'Corriente', 3050.75),
+('Diana Prince', 'Ahorro', 4550.30),
+('Peter Parker', 'Corriente', 950.25),
+('Natasha Romanoff', 'Corriente', 1235.65),
+('Steve Rogers', 'Ahorro', 750.00),
+('Wanda Maximoff', 'Corriente', 1789.80),
+('Stephen Strange', 'Ahorro', 3000.40),
+('T Challa', 'Corriente', 9999.99);
+
+select * from cuenta;
+
+## Uso de aplicacion 
+
+seleccione una cuenta de la lista que incorpora el inicio.
+Opciones disponibles en el menú (consultar saldo, retirar, depositar, salir).
+
+
+## Estructura
+
+src/
+├── main/
+│   ├── java/
+│   │   └── com/
+│   │       └── ejercicios_tecnicos/
+│   │           └── conversor_de_monedas/
+│   │               ├── ConversorDeMonedasApplication.java
+│   │               ├── model/
+│   │               │   └── Cuenta.java
+│   │               ├── service/
+│   │               │   └── CuentaService.java
+│   │               └── repository/
+│   │                   └── CuentaRepository.java
+│   └── resources/
+│       └── application.properties
+└── test/
+    └── java/
+        └── com/
+            └── ejercicios_tecnicos/
+                └── conversor_de_monedas/
+                    └── ConversorDeMonedasApplicationTests.java
+
+## Autor
+
+Isai Emmanuel Castro Hernandez
+
+## Contacto 
+
+Para cualquier duda o comentario, contáctanos en emmcast91@gmail.com.
+
+
+
+
